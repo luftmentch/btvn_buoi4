@@ -7,20 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-   
-  
-
+    <link rel="stylesheet" href="app.js">
 </head>
 
 <body onload="showClock()">
-    <button onclick="findEven()">dua ra cac so chan</button><br>
+    <button onclick="findEven()">In ra các số chẵn</button><br>
 
     <div id="colortest" onmousemove="changeColor()" onmouseout="resetColor()">
 
     </div>
 
-    <button onclick="numberOneTriangle()">tam giac so</button>
-    <br>
+    <button onclick="numberOneTriangle()">Tam giác</button>
 
     <div id="clock">
 
@@ -28,62 +25,7 @@
 
 
     <script>
-        let so = [4, 6, 7, 8, 5, 9, 12, 11, 14, 15, 13, 10, 16, 18, 20, 19, 17];
-        let number;
-        number = prompt('chon mot so bat ky tu khoang 4-20');
-        console.log(number);
-        console.log(so);
-        if (4 <= number && number <= 20) {
-        function findEven() {  
-            for (let i = 0; i < so.length; i++) {
-                if (so[i] < number) {
-                    if (so[i] % 2 == 0) {
-                        console.log(so[i])
-                    }
-                }
-                }
-            } 
-            }else{
-                alert('so khong xac dinh')
-        }
         
-        
-
-        let color = document.getElementById('colortest')
-        function changeColor() {
-            color.style.background = "aqua"
-        }
-        function resetColor() {
-            color.style.background = "pink"
-        }
-
-        function numberOneTriangle() {
-        let n = 5;
-            for (let i = 1; i <= n; i++) {
-                for (let j = 1; j <= i; j++) {
-                    document.writeln("1");
-                }
-                document.writeln("<br/>");
-            }
-        }
-
-        function showClock() {
-            let today = new Date();
-            let hours = today.getHours();
-            let minutes = today.getMinutes();
-            let seconds = today.getSeconds();
-            minutes = zeroFront(minutes);
-            seconds = zeroFront(seconds);
-
-            document.getElementById('clock').innerHTML =  hours + ":" + minutes + ":" + seconds;
-            setTimeout(showClock, 1000);
-        }
-        function zeroFront(i) {
-            if(i<10){
-                i = "0" + i
-            };
-            return i;
-        }
     </script>
 
 </body>
